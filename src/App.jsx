@@ -3,6 +3,7 @@ import {Books} from "./utils/mockData";
 import "./components/style.css"
 import { useState } from "react";
 import { use } from "react";
+import Header from "./components/Header";
 
 function App(){
   const [searchText, setSearchText] = useState(Books);
@@ -12,6 +13,7 @@ function App(){
    setFilteredBooks(Books.filter((book) => book.title.toLowerCase().includes(searchText.toLowerCase()))); 
   }  
   return <>
+  <Header/>
   <div className="search">
     <h2>Search Books</h2>
     <div>
