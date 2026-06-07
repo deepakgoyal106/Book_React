@@ -7,6 +7,7 @@ import About from './components/About.jsx';
 import Contact from './components/Contact.jsx';
 import Error from './components/Error.jsx';
 import BookList from './components/BookList.jsx';
+import BookDetails from './components/BookDetails.jsx';
 //create routing information
 const appRouter = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const appRouter = createBrowserRouter([
       {
         path: "contact",
         element: <Contact />
+      },
+      {
+        path:"book/:id",
+        element:<BookDetails/>
       }
     ]
   }

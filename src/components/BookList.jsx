@@ -2,6 +2,8 @@ import "./style.css"
 import Book from "./Book";
 import {Books} from "../utils/mockData.js"
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 
 function BookList(){
     const [searchText, setSearchText] = useState("");
@@ -19,7 +21,12 @@ function BookList(){
                 </div>
             </div>
             <div className="bookList">
-                {filteredBooks.map((data) => <Book key={data.id} bookDetails={data}/>)}
+                {filteredBooks.map((book) => (
+                    <Link to={`/book/${book.id}`}>
+                    <Book key={book.id} bookDetails={book}/>
+                    </Link>
+                    ))
+                }
                
             </div>
             </>
